@@ -68,11 +68,11 @@ def logar(request):
         usuario = auth.authenticate(username=username, password=senha)
 
         if not usuario:
-            messages.add_message(request, constants.ERROR, 'username ou senha invalidos')
+            messages.add_message(request, constants.ERROR, 'usuario ou senha invalidos')
             return redirect('/auth/logar')
         else:
             auth.login(request, usuario)
-            return redirect ('/')
+            return redirect ('/pacientes')
         
 
     
